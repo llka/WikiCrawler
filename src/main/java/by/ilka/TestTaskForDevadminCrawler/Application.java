@@ -36,7 +36,6 @@ public class Application implements CommandLineRunner {
                 try {
                     String title = wikipediaPageService.findWikiArticleTitle(strings[i]);
                     logger.info("Url - " + strings[i] + ", Title - " + title);
-                    //articles.add(new ArticleInfo(title, strings[i], new byte[]{}));
                     articles.add(new ArticleInfo(title, strings[i], wikipediaPageService.loadImage(strings[i])));
                 } catch (ServiceException e) {
                     logger.error(e);

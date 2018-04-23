@@ -28,10 +28,10 @@ public class WikipediaArticleLogic {
         }
     }
 
-    public List<ArticleInfo> findAll() throws Exception {
+    public List<ArticleInfo> findAll() throws LogicException {
         List<ArticleInfo> articles = articleInfoRepository.findAll();
         if (articles.isEmpty()) {
-            throw new Exception("No articles");
+            throw new LogicException("No articles");
         } else {
             return articles;
         }
